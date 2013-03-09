@@ -21,12 +21,13 @@ return array(
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		
-		'gii'=>array(
+	/*	'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'qwerty',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
+	*/
 		
 	),
 
@@ -59,8 +60,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=rssposting',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => 'qwerty',
+			'username' => 'root',//replace with your mysql user
+			'password' => 'qwerty',//your password here
 			'charset' => 'utf8',
 		),
 		
@@ -91,8 +92,8 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
 		'feedLimit' => 0,
-		'feedCacheTime' => 1 * 60,
-		'blogUrl' => "/blog/",
-		'adminPassword' => "qwerty"
+		'feedCacheTime' => 1 * 60,//replace 1 with number of minutes you want feed to be cached for
+		'blogUrl' => "/",//if your blog is some folder other than root of your website, you may change it to /blog/ or /wordpress/
+		'adminPassword' => "qwerty"//CHANGE IT! this is login password for admin user
 	),
 );
