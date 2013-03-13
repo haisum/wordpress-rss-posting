@@ -17,11 +17,10 @@
 		<div style="float:right;">
 			<?php echo CHtml::dropDownList("category", "", $this->getWpCategories(), array(
 				"multiple" => "multiple",
-				"style" => "height:320px;margin-bottom:10px;"
+				"style" => "height:320px;margin-bottom:10px;width:150px;"
 			)); ?>
 		</div>
-		<div>
-			<br/>
+		<div style="float:rigth;">
 			<br/>
 			<input type="submit" value="Submit"/>
 		</div>
