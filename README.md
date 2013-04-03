@@ -12,6 +12,12 @@ I am a lazy specie. As soon as some tasks start consuming my time, I start think
 
 But, I didn't want to read posts on google reader, summarize them, create new posts on wp admin and publish them one by one. So I ended up creating this project. This is similar to Google reader, you create categories, save feed links in those categories. This app, fetches fresh feeds for you, lists them and allows you to edit, select wordpress category, tags and new title and publish them to wordpress.
 
+=====
+Requirements
+=====
+
+PHP 5.1+
+PDO and PDO-MYSQL Extension
 
 ===
 Installation
