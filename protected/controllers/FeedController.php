@@ -99,8 +99,8 @@ class FeedController extends Controller
 				$postCat = new TermRelationships;
 				$postCat->term_taxonomy_id = $id;
 				$postCat->object_id = $post->ID;
-								$taxonomy[0]->count = $taxonomy[0]->count+1;
-								$taxonomy[0]->save(false);
+				$taxonomy[0]->count = $taxonomy[0]->count+1;
+				$taxonomy[0]->save(false);
 				$postCat->save(false);
 			}
 			$tags = explode("," ,$data["tags"]);
@@ -110,8 +110,8 @@ class FeedController extends Controller
 				if(count($term) > 0){
 					$term = $term[0];
 					$taxonomy = TermTaxonomy::model()->findAll("term_id=" . $term->term_id . " and taxonomy='post_tag'");
-										$taxonomy[0]->count = $taxonomy[0]->count+1;
-										$taxonomy[0]->save(false);
+					$taxonomy[0]->count = $taxonomy[0]->count+1;
+					$taxonomy[0]->save(false);
 					$id = $taxonomy[0]->term_taxonomy_id;
 				}
 				else{
@@ -126,8 +126,8 @@ class FeedController extends Controller
 					$taxonomy = new TermTaxonomy;
 					$taxonomy->term_id = $term->term_id;
 					$taxonomy->taxonomy = "post_tag";
-										$taxonomy->count = 1;
-										$taxonomy->save(false);
+					$taxonomy->count = 1;
+					$taxonomy->save(false);
 					$id = $taxonomy->term_taxonomy_id;
 				}
 				$postTag = new TermRelationships;
