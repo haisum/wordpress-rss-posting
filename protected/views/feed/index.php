@@ -30,10 +30,28 @@ Yii::app()->clientScript->registerScript("formSubmit", '
 				}
 				window.setTimeout(function(){
 					$(".message").remove();
+					if(!isNaN(data)){
+						$this.parent().slideUp();
+						$("#title_" + id).css("textDecoration", "line-through");
+					}
 				},3000);
 				$this.find("input[type=submit]").prop("disabled", false);
 			}
 		})
+	}
+	function submitAll(){
+		if($("#submitAll>option:selected").length == 0){
+			$("#submitAllMessage").html("No category selected");
+		}
+		else{
+			$("#submitAllMessage").html("Submitting, successfully submitted feeds\' title will be strike throughed");
+			var newCats = $("#submitAll").val();
+			$(".feedCheck:checked").each(function(){
+				var id = $(this).val();
+				$("#cat_"+id).val(newCats);
+				submitForm(id);
+			});
+		}
 	}
 ', CClientScript::POS_HEAD);
 ?>
@@ -42,3 +60,15 @@ Yii::app()->clientScript->registerScript("formSubmit", '
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>
+<h1 style="clear:both;">Submit All</h1>
+<div style="float:left;">
+	<?php echo CHtml::dropDownList("category", "", $this->getWpCategories(), array(
+		"multiple" => "multiple",
+		"style" => "height:320px;margin-bottom:10px;width:150px;",
+		"id" => "submitAll"
+	)); ?>
+</div>
+<div style="float:left;margin-left:20px;">
+	<button onclick="submitAll();">Submit</button>
+	<span id="submitAllMessage"></span>
+</div>

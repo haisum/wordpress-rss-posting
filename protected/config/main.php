@@ -58,7 +58,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=rssposting',
+			'connectionString' => 'mysql:host=localhost;dbname=wordpress',
 			'emulatePrepare' => true,
 			'username' => 'root',//replace with your mysql user
 			'password' => 'qwerty',//your password here
@@ -93,7 +93,8 @@ return array(
 		'adminEmail'=>'webmaster@example.com',
 		'feedLimit' => 0,
 		'feedCacheTime' => 1 * 60,//replace 1 with number of minutes you want feed to be cached for
-		'blogUrl' => "/",//if your blog is some folder other than root of your website, you may change it to /blog/ or /wordpress/
-		'adminPassword' => "qwerty"//CHANGE IT! this is login password for admin user
+		'blogUrl' => "/wordpress/",//if your blog is some folder other than root of your website, you may change it to /blog/ or /wordpress/
+		'adminPassword' => "qwerty",//CHANGE IT! this is login password for admin user
+		'showSource' => true, //Give credits to feed origin by adding source:[Feed title hyperlinked] before every post (This also makes sure you are not blacklisteed due to duplicated content)
 	),
 );
